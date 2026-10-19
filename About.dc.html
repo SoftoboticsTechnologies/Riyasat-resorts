@@ -83,16 +83,20 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { isMobile: typeof window !== 'undefined' && window.innerWidth < 980 };
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth < 980,
+    isPhone: typeof window !== 'undefined' && window.innerWidth < 640,
+  };
 
   componentDidMount() {
-    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980 });
+    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980, isPhone: window.innerWidth < 640 });
     window.addEventListener('resize', this.onResize);
   }
   componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
 
   renderVals() {
     const m = this.state.isMobile;
+    const ph = this.state.isPhone;
     const phone = '8700616225';
     return {
       phone,

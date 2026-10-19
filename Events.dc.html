@@ -33,7 +33,7 @@
       <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px);display:grid;grid-template-columns:{{ eventCols }};gap:clamp(20px,3vw,30px)">
         <sc-for list="{{ events }}" as="e" hint-placeholder-count="6">
           <div style="display:flex;flex-direction:column;height:100%;background:#FFFFFF;border:1px solid rgba(209,168,89,.3);transition:box-shadow .3s ease,border-color .3s ease" style-hover="box-shadow:0 18px 40px rgba(93,43,42,.14);border-color:rgba(209,168,89,.6)">
-            <div style="position:relative;height:clamp(300px,32vw,420px);overflow:hidden">
+            <div style="position:relative;height:{{ eventImgH }};overflow:hidden">
               <div style="position:absolute;inset:0;background-image:url({{ e.url }});background-size:cover;background-position:center;background-color:#EDE3D2;transition:transform .5s ease" style-hover="transform:scale(1.06)">
               </div>
             </div>
@@ -56,7 +56,7 @@
         </div>
         <div style="display:flex;flex-direction:column">
           <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
-            <div style="display:flex;gap:24px;padding:26px 0;border-bottom:1px solid rgba(209,168,89,.4)">
+            <div style="display:flex;gap:clamp(16px,3vw,24px);padding:clamp(20px,3vw,26px) 0;border-bottom:1px solid rgba(209,168,89,.4)">
               <span style="font-family:'Playfair Display',serif;font-weight:500;font-size:26px;color:#D1A859;flex:0 0 auto">{{ s.n }}</span>
               <div>
                 <h3 style="margin:0 0 8px;font-family:'Playfair Display',serif;font-weight:500;font-size:23px;color:#5D2B2A">{{ s.title }}</h3>
@@ -71,15 +71,15 @@
     <section data-screen-label="Capacity" style="background:#3F2423;padding:clamp(56px,8vw,110px) clamp(20px,5vw,72px)">
       <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:{{ halfCols }};gap:clamp(24px,4vw,48px)">
         <div style="border:1px solid rgba(209,168,89,.4);padding:clamp(28px,4vw,44px)">
-          <span style="font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Up to 150 guests</span>
-          <h3 style="margin:14px 0 12px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);color:#F5EFE5">Private celebrations</h3>
-          <p style="margin:0 0 22px;font-size:16px;line-height:1.8;color:rgba(245,239,229,.8);max-width:36ch">Haldi, mehndi, get togethers, poolside evenings and spiritual events.</p>
+          <span style="font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Up to 150 members</span>
+          <h3 style="margin:14px 0 12px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);color:#F5EFE5">Resort for 150 members</h3>
+          <p style="margin:0 0 22px;font-size:16px;line-height:1.8;color:rgba(245,239,229,.8);max-width:36ch">Haldi, mehndi, get together, swimming pool party and spiritual events.</p>
           <a href="Properties.dc.html" style="font-size:14px;font-weight:600;color:#D1A859;border-bottom:1px solid rgba(209,168,89,.6);padding-bottom:4px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="color:#D1A859">Property one →</a>
         </div>
         <div style="border:1px solid rgba(209,168,89,.4);padding:clamp(28px,4vw,44px)">
-          <span style="font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Up to 500 guests</span>
-          <h3 style="margin:14px 0 12px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);color:#F5EFE5">Large scale events</h3>
-          <p style="margin:0 0 22px;font-size:16px;line-height:1.8;color:rgba(245,239,229,.8);max-width:36ch">Weddings and celebrations that need open lawn, staging and dining space.</p>
+          <span style="font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Up to 500 members</span>
+          <h3 style="margin:14px 0 12px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(24px,2.8vw,34px);color:#F5EFE5">Resort for 500 members</h3>
+          <p style="margin:0 0 22px;font-size:16px;line-height:1.8;color:rgba(245,239,229,.8);max-width:36ch">Haldi, mehndi, get together and spiritual events for up to 500 members.</p>
           <a href="Properties.dc.html" style="font-size:14px;font-weight:600;color:#D1A859;border-bottom:1px solid rgba(209,168,89,.6);padding-bottom:4px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="color:#D1A859">Property two →</a>
         </div>
       </div>
@@ -95,7 +95,10 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { isMobile: typeof window !== 'undefined' && window.innerWidth < 980 };
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth < 980,
+    isPhone: typeof window !== 'undefined' && window.innerWidth < 640,
+  };
 
   eventsList = [
     { title: 'Haldi', note: 'Morning light, marigold, open lawn.', slot: 'Haldi ceremony', url: 'assets/occasions/haldi.jpg' },
@@ -107,7 +110,7 @@ class Component extends DCLogic {
   ];
 
   componentDidMount() {
-    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980 });
+    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980, isPhone: window.innerWidth < 640 });
     window.addEventListener('resize', this.onResize);
   }
   componentWillUnmount() {
@@ -116,22 +119,24 @@ class Component extends DCLogic {
 
   renderVals() {
     const m = this.state.isMobile;
+    const ph = this.state.isPhone;
     const phone = '8700616225';
     return {
       phone,
       waHref: 'https://wa.me/91' + phone,
       topPad: m ? '64px' : '80px',
       botPad: m ? '56px' : '0px',
-      halfCols: m ? '1fr' : '1fr 1fr',
+      halfCols: ph ? '1fr' : '1fr 1fr',
+      eventImgH: ph ? '260px' : (m ? '280px' : 'clamp(300px,32vw,420px)'),
       splitCols: m ? '1fr' : '0.85fr 1.15fr',
-      eventCols: m ? '1fr' : 'repeat(3, 1fr)',
+      eventCols: ph ? '1fr' : (m ? '1fr 1fr' : 'repeat(3, 1fr)'),
       events: this.eventsList.map((e) => ({
         ...e,
         wa: 'https://wa.me/91' + phone + '?text=' + encodeURIComponent('Enquiry for ' + e.title + ' at Riyasat e Resort'),
       })),
       steps: [
         { n: '01', title: 'Tell us the occasion', note: 'Date, guest count and the kind of celebration you have in mind.' },
-        { n: '02', title: 'Walk the property', note: 'See both properties, the garden and the pool before you decide.' },
+        { n: '02', title: 'Walk the property', note: 'See the property, the garden and the pool before you decide.' },
         { n: '03', title: 'We shape the space', note: 'Layout, seating and décor arranged around your plan for the day.' },
       ],
     };

@@ -21,8 +21,8 @@
     <section data-screen-label="Page header" style="background:#3F2423;border-bottom:1px solid rgba(209,168,89,.3);padding:clamp(56px,8vw,120px) clamp(20px,5vw,72px)">
       <div style="max-width:1240px;margin:0 auto">
         <span style="font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#D1A859">Properties</span>
-        <h1 style="margin:18px 0 20px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34px,5.4vw,74px);line-height:1.08;color:#F5EFE5;max-width:22ch">Two properties, one address</h1>
-        <p style="margin:0;font-size:clamp(16px,1.25vw,19px);line-height:1.8;color:rgba(245,239,229,.86);max-width:54ch">Choose the property that fits your guest list. Both sit on the same premises, with access to the garden and pool.</p>
+        <h1 style="margin:18px 0 20px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34px,5.4vw,74px);line-height:1.08;color:#F5EFE5;max-width:22ch">Two properties, for 150 and 500 members</h1>
+        <p style="margin:0;font-size:clamp(16px,1.25vw,19px);line-height:1.8;color:rgba(245,239,229,.86);max-width:54ch">Choose the property that fits your guest list: one resort for 150 members and one for 500 members.</p>
       </div>
     </section>
 
@@ -51,7 +51,7 @@
 
     <section data-screen-label="Shared" style="padding:clamp(60px,8vw,120px) clamp(20px,5vw,72px)">
       <div style="max-width:1240px;margin:0 auto">
-        <span style="font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#786B61">Shared across both</span>
+        <span style="font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#786B61">At our resort</span>
         <h2 style="margin:16px 0 clamp(28px,4vw,44px);font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.6vw,48px);line-height:1.16;color:#5D2B2A;max-width:22ch">Garden, pool and rooms</h2>
         <div style="display:grid;grid-template-columns:{{ threeCols }};gap:20px">
           <sc-for list="{{ shared }}" as="s" hint-placeholder-count="3">
@@ -70,16 +70,20 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { isMobile: typeof window !== 'undefined' && window.innerWidth < 980 };
+  state = {
+    isMobile: typeof window !== 'undefined' && window.innerWidth < 980,
+    isPhone: typeof window !== 'undefined' && window.innerWidth < 640,
+  };
 
   componentDidMount() {
-    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980 });
+    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980, isPhone: window.innerWidth < 640 });
     window.addEventListener('resize', this.onResize);
   }
   componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
 
   renderVals() {
     const m = this.state.isMobile;
+    const ph = this.state.isPhone;
     const phone = '8700616225';
     return {
       phone,
@@ -92,8 +96,8 @@ class Component extends DCLogic {
         {
           eyebrow: 'Property One · 150 members',
           title: 'Resort for 150 members',
-          body: 'The smaller of the two properties, held for one family at a time. Suited to private celebrations, intimate gatherings and stays around an event.',
-          points: ['Private celebrations and gatherings', 'Guest rooms on the same premises', 'Garden and pool access'],
+          body: 'Events of up to 150 members, along with a peaceful stay.',
+          points: ['Haldi, mehndi and get together', 'Swimming pool party and spiritual events', 'Peaceful stay'],
           slot: 'Property one, 150 guests',
           url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg',
           photoOrder: 0,
@@ -101,8 +105,8 @@ class Component extends DCLogic {
         {
           eyebrow: 'Property Two · 500 members',
           title: 'Resort for 500 members',
-          body: 'The larger property, for weddings and large scale celebrations that need open space, staging and room for movement.',
-          points: ['Large scale events and weddings', 'Open lawn for staging and dining', 'Garden and pool access'],
+          body: 'Events of up to 500 members.',
+          points: ['Haldi, mehndi and get together', 'Spiritual events', 'Events up to 500 members'],
           slot: 'Property two, 500 guests',
           url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg',
           photoOrder: m ? 0 : 2,

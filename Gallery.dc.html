@@ -22,7 +22,7 @@
       <div style="max-width:1240px;margin:0 auto">
         <span style="font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#D1A859">Gallery</span>
         <h1 style="margin:18px 0 20px;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(34px,5.4vw,74px);line-height:1.08;color:#F5EFE5;max-width:20ch">The property, in frames</h1>
-        <p style="margin:0;font-size:clamp(16px,1.25vw,19px);line-height:1.8;color:rgba(245,239,229,.86);max-width:52ch">Exterior, rooms, garden, pool, events and décor. Tap any frame to open it full screen.</p>
+        <p style="margin:0;font-size:clamp(16px,1.25vw,19px);line-height:1.8;color:rgba(245,239,229,.86);max-width:52ch">Rooms, garden and pool. Tap any frame to open it full screen.</p>
       </div>
     </section>
 
@@ -35,9 +35,9 @@
     </section>
 
     <section data-screen-label="Masonry" style="padding:clamp(28px,4vw,48px) clamp(20px,5vw,72px) clamp(60px,8vw,120px)">
-      <div style="max-width:1240px;margin:0 auto;column-count:{{ cols }};column-gap:18px">
+      <div style="max-width:1240px;margin:0 auto;column-count:{{ cols }};column-gap:{{ gap }}">
         <sc-for list="{{ shots }}" as="g" hint-placeholder-count="10">
-          <div onClick="{{ g.open }}" style="break-inside:avoid;margin-bottom:18px;cursor:pointer;position:relative;height:{{ g.h }};border:1px solid rgba(209,168,89,.45);background-image:url({{ g.url }});background-size:cover;background-position:center;background-color:#EDE3D2;display:flex;align-items:flex-end;padding:16px">
+          <div onClick="{{ g.open }}" style="break-inside:avoid;margin-bottom:{{ gap }};cursor:pointer;position:relative;height:{{ g.h }};border:1px solid rgba(209,168,89,.45);background-image:url({{ g.url }});background-size:cover;background-position:center;background-color:#EDE3D2;display:flex;align-items:flex-end;padding:16px">
           </div>
         </sc-for>
       </div>
@@ -46,9 +46,9 @@
     <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
       <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:90;background:rgba(45,37,35,.95);display:flex;align-items:center;justify-content:center;padding:clamp(18px,5vw,70px);animation:riseIn .28s ease both">
         <button onClick="{{ close }}" aria-label="Close" style="position:absolute;top:18px;right:18px;width:46px;height:40px;background:transparent;border:1px solid rgba(209,168,89,.55);color:#D1A859;font-size:20px;line-height:1;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:rgba(209,168,89,.16);border-color:#D1A859">×</button>
-        <button onClick="{{ prev }}" aria-label="Previous" style="position:absolute;left:14px;width:46px;height:46px;background:transparent;border:1px solid rgba(209,168,89,.55);color:#D1A859;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:rgba(209,168,89,.16);border-color:#D1A859">←</button>
-        <button onClick="{{ next }}" aria-label="Next" style="position:absolute;right:14px;width:46px;height:46px;background:transparent;border:1px solid rgba(209,168,89,.55);color:#D1A859;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:rgba(209,168,89,.16);border-color:#D1A859">→</button>
-        <div style="width:min(100%,1000px);height:min(78vh,680px);border:1px solid rgba(209,168,89,.5);background-image:url({{ bigUrl }});background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#3F2423;display:flex;align-items:center;justify-content:center">
+        <button onClick="{{ prev }}" aria-label="Previous" style="position:absolute;left:{{ prevLeft }};top:{{ arrowTop }};bottom:{{ arrowBottom }};width:46px;height:46px;background:transparent;border:1px solid rgba(209,168,89,.55);color:#D1A859;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:rgba(209,168,89,.16);border-color:#D1A859">←</button>
+        <button onClick="{{ next }}" aria-label="Next" style="position:absolute;right:{{ nextRight }};top:{{ arrowTop }};bottom:{{ arrowBottom }};width:46px;height:46px;background:transparent;border:1px solid rgba(209,168,89,.55);color:#D1A859;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:rgba(209,168,89,.16);border-color:#D1A859">→</button>
+        <div onClick="{{ stop }}" style="width:min(100%,1000px);height:{{ bigH }};border:1px solid rgba(209,168,89,.5);background-image:url({{ bigUrl }});background-size:contain;background-position:center;background-repeat:no-repeat;background-color:#3F2423;display:flex;align-items:center;justify-content:center">
         </div>
       </div>
     </sc-if>
@@ -71,27 +71,20 @@
 class Component extends DCLogic {
   state = {
     isMobile: typeof window !== 'undefined' && window.innerWidth < 980,
+    isPhone: typeof window !== 'undefined' && window.innerWidth < 640,
     filter: 'All',
     index: null,
   };
 
   all = [
-    { label: 'Exterior, day', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', tag: 'Exterior', h: 300 },
-    { label: 'Room interior', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.15.04.jpeg', tag: 'Rooms', h: 220 },
-    { label: 'Garden lawn', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', tag: 'Garden', h: 360 },
-    { label: 'Swimming pool', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', tag: 'Pool', h: 240 },
-    { label: 'Event décor', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', tag: 'Events', h: 320 },
-    { label: 'Night view', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', tag: 'Exterior', h: 280 },
-    { label: 'Reception', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', tag: 'Exterior', h: 200 },
-    { label: 'Mandap detail', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', tag: 'Events', h: 340 },
-    { label: 'Poolside lounge', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', tag: 'Pool', h: 250 },
-    { label: 'Bathroom detail', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.15.15.jpeg', tag: 'Rooms', h: 230 },
-    { label: 'Garden pathway', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', tag: 'Garden', h: 300 },
-    { label: 'Haldi setup', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', tag: 'Events', h: 270 },
+    { label: 'Swimming pool, evening', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', tag: 'Pool', h: 320 },
+    { label: 'Room interior', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.15.04.jpeg', tag: 'Rooms', h: 260 },
+    { label: 'Garden at night', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', tag: 'Garden', h: 340 },
+    { label: 'Bathroom detail', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.15.15.jpeg', tag: 'Rooms', h: 280 },
   ];
 
   componentDidMount() {
-    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980 });
+    this.onResize = () => this.setState({ isMobile: window.innerWidth < 980, isPhone: window.innerWidth < 640 });
     window.addEventListener('resize', this.onResize);
     this.onKey = (e) => {
       if (this.state.index === null) return;
@@ -118,15 +111,23 @@ class Component extends DCLogic {
 
   renderVals() {
     const m = this.state.isMobile;
+    const ph = this.state.isPhone;
     const phone = '8700616225';
     const shots = this.visible();
-    const tags = ['All', 'Exterior', 'Rooms', 'Garden', 'Pool', 'Events'];
+    const tags = ['All', ...new Set(this.all.map(s => s.tag))];
     return {
       phone,
       waHref: 'https://wa.me/91' + phone,
       topPad: m ? '64px' : '80px',
       botPad: m ? '56px' : '0px',
-      cols: m ? 2 : 3,
+      cols: ph ? 2 : 3,
+      arrowTop: 'auto',
+      arrowBottom: m ? 'calc(22px + env(safe-area-inset-bottom))' : 'auto',
+      prevLeft: m ? 'calc(50% - 58px)' : '14px',
+      nextRight: m ? 'calc(50% - 58px)' : '14px',
+      bigH: m ? 'min(68vh,560px)' : 'min(78vh,680px)',
+      stop: (e) => e.stopPropagation(),
+      gap: ph ? '10px' : '18px',
       filters: tags.map(t => ({
         label: t,
         bg: this.state.filter === t ? '#5D2B2A' : 'transparent',
@@ -136,7 +137,7 @@ class Component extends DCLogic {
       shots: shots.map((s, i) => ({
         label: s.label,
         url: s.url,
-        h: (m ? Math.round(s.h * 0.72) : s.h) + 'px',
+        h: (ph ? Math.round(s.h * 0.62) : m ? Math.round(s.h * 0.8) : s.h) + 'px',
         open: () => this.setState({ index: i }),
       })),
       open: this.state.index !== null,
