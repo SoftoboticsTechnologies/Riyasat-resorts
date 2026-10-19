@@ -120,7 +120,6 @@
             <a href="Events.dc.html" style="position:relative;display:block;height:{{ eventH }};overflow:hidden;border:1px solid rgba(209,168,89,.45);background-color:#3F2423;transition:border-color .3s ease,box-shadow .3s ease" style-hover="border-color:#D1A859;box-shadow:0 16px 36px rgba(63,36,35,.22)">
               <div style="position:absolute;inset:0;background-image:url({{ e.url }});background-size:cover;background-position:center;transition:transform .7s ease" style-hover="transform:scale(1.06)"></div>
               <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(63,36,35,.1) 30%,rgba(63,36,35,.9) 100%);pointer-events:none"></div>
-              <span style="position:absolute;top:clamp(12px,1.6vw,20px);left:clamp(12px,1.6vw,20px);font-family:'Playfair Display',serif;font-size:clamp(15px,1.4vw,18px);color:#D1A859;pointer-events:none">{{ e.num }}</span>
               <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2vw,26px);display:flex;flex-direction:column;gap:8px;pointer-events:none">
                 <span style="width:32px;height:1px;background:#D1A859"></span>
                 <h4 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(19px,2vw,26px);line-height:1.2;color:#F5EFE5">{{ e.title }}</h4>
@@ -295,7 +294,7 @@ class Component extends DCLogic {
         { label: 'Room interior', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.15.04.jpeg', h: tH },
         { label: 'Bathroom detail', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.15.15.jpeg', h: tH },
       ],
-      events: this.eventsList.map((e, i) => ({ ...e, num: String(i + 1).padStart(2, '0') })),
+      events: this.eventsList,
       eventCols: m ? '1fr 1fr' : 'repeat(3,1fr)',
       eventH: ph ? '210px' : (m ? '300px' : 'clamp(300px,30vw,400px)'),
       noteDisplay: ph ? 'none' : 'block',
