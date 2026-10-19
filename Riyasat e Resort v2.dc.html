@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/circular%20logo.png">
+<link rel="apple-touch-icon" href="assets/circular%20logo.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -27,7 +29,7 @@
   <header style="position:fixed;left:0;right:0;top:0;z-index:70;background:rgba(63,36,35,.94);backdrop-filter:blur(6px);border-bottom:1px solid rgba(209,168,89,.32)">
     <div style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,3vw,40px);height:{{ barH }};display:flex;align-items:center;justify-content:space-between;gap:20px">
       <a href="#home" style="display:flex;align-items:center;gap:12px">
-        <img src="logo-circular.png" alt="Riyasat e Resort" style="width:40px;height:40px;border-radius:50%;display:block" />
+        <img src="assets/circular%20logo.png" alt="Riyasat e Resort" style="width:40px;height:40px;border-radius:50%;display:block" />
         <span style="font-family:Marcellus,serif;font-size:14px;letter-spacing:.3em;color:#F5EFE5;white-space:nowrap;flex:0 0 auto;display:{{ wordmarkDisplay }}">RIYASAT E RESORT</span>
       </a>
       <nav style="display:{{ navRowDisplay }};align-items:center;gap:clamp(18px,2.4vw,36px)">
@@ -73,7 +75,7 @@
       </sc-for>
       <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(63,36,35,.35) 0%,rgba(63,36,35,.82) 100%)"></div>
       <div style="position:relative;text-align:center;padding:clamp(96px,12vh,150px) clamp(22px,6vw,60px) clamp(60px,8vh,96px);max-width:960px;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,3vh,30px)">
-        <img src="logo-circular.png" alt="Riyasat e Resort" style="width:clamp(116px,13vw,164px);height:clamp(116px,13vw,164px);border-radius:50%;display:block" />
+        <img src="assets/circular%20logo.png" alt="Riyasat e Resort" style="width:clamp(116px,13vw,164px);height:clamp(116px,13vw,164px);border-radius:50%;display:block" />
         <span style="font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:#D1A859">3 Star Heritage Resort</span>
         <h1 style="margin:0;font-family:Marcellus,serif;font-weight:400;font-size:clamp(40px,7.4vw,104px);line-height:1.02;letter-spacing:.08em;color:#F5EFE5;text-wrap:balance">RIYASAT E RESORT</h1>
         <div style="display:flex;align-items:center;gap:16px">
@@ -294,7 +296,7 @@
     </section>
 
     <footer style="background:#3F2423;padding:clamp(60px,8vw,110px) clamp(22px,6vw,80px) clamp(36px,4vw,56px);text-align:center">
-      <img src="logo-circular.png" alt="Riyasat e Resort" style="width:186px;height:186px;border-radius:50%;display:block;margin:0 auto 34px" />
+      <img src="assets/circular%20logo.png" alt="Riyasat e Resort" style="width:186px;height:186px;border-radius:50%;display:block;margin:0 auto 34px" />
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-bottom:28px">
         <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="7">
           <a href="{{ l.href }}" style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(245,239,229,.72)">{{ l.label }}</a>

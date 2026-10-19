@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/circular%20logo.png">
+<link rel="apple-touch-icon" href="assets/circular%20logo.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -22,7 +24,7 @@
       </sc-for>
       <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(63,36,35,.9) 0%,rgba(63,36,35,.62) 55%,rgba(63,36,35,.4) 100%)"></div>
       <div style="position:relative;width:100%;max-width:1240px;margin:0 auto;padding:clamp(110px,14vh,170px) clamp(20px,5vw,72px) clamp(70px,9vh,110px);display:flex;flex-direction:column;align-items:flex-start;gap:26px">
-        <img src="logo-circular.png" alt="Riyasat e Resort" style="width:clamp(104px,11vw,140px);height:clamp(104px,11vw,140px);border-radius:50%;display:block" />
+        <img src="assets/circular%20logo.png" alt="Riyasat e Resort" style="width:clamp(104px,11vw,140px);height:clamp(104px,11vw,140px);border-radius:50%;display:block" />
         <h1 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(42px,6.6vw,92px);line-height:1.04;color:#F5EFE5;max-width:16ch;text-wrap:balance">Riyasat e Resort</h1>
         <p style="margin:0;max-width:48ch;font-size:clamp(16px,1.3vw,19px);line-height:1.75;color:rgba(245,239,229,.9)">Stays, weddings and private celebrations in Indirapuram. Two properties, for 150 and 500 guests, run by one team for the last six years.</p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:6px">
@@ -63,73 +65,76 @@
       </div>
     </section>
 
-    <section data-screen-label="Two properties" style="background:#3F2423;border-top:1px solid rgba(209,168,89,.3);border-bottom:1px solid rgba(209,168,89,.3)">
-      <div style="max-width:1240px;margin:0 auto;padding:clamp(56px,7vw,100px) clamp(20px,5vw,72px) clamp(8px,2vw,26px)">
-        <span style="font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#D1A859">Two Properties</span>
-        <h2 style="margin:16px 0 0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1.14;color:#F5EFE5;max-width:24ch">One address, two scales of celebration</h2>
-      </div>
-      <div style="display:{{ diagonalDisplay }};position:relative;height:clamp(440px,52vw,620px);overflow:hidden">
-        <div style="position:absolute;inset:0;clip-path:polygon(0 0,58% 0,42% 100%,0 100%);background-image:linear-gradient(100deg,rgba(63,36,35,.82) 0%,rgba(63,36,35,.42) 100%),url(https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=70);background-size:cover;background-position:center;background-color:#3F2423;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:0 13% 0 clamp(28px,8vw,120px);transition:filter .4s ease" style-hover="filter:brightness(1.1)">
-          <span style="font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Property One</span>
-          <h3 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3.2vw,42px);line-height:1.2;color:#F5EFE5;max-width:14ch">Resort for 150 members</h3>
-          <p style="margin:0;font-size:16px;line-height:1.8;color:rgba(245,239,229,.86);max-width:24ch">Private celebrations, intimate gatherings and comfortable stays.</p>
-          <a href="Properties.dc.html" style="align-self:flex-start;border:1px solid rgba(209,168,89,.7);color:#D1A859;font-size:13px;font-weight:600;letter-spacing:.1em;padding:16px 26px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:#D1A859;color:#3F2423;border-color:#D1A859">See the property</a>
+    <section data-screen-label="Two properties" style="background:#3F2423;border-top:1px solid rgba(209,168,89,.3);border-bottom:1px solid rgba(209,168,89,.3);padding:clamp(64px,8vw,116px) 0">
+      <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,72px)">
+        <div style="display:grid;grid-template-columns:{{ halfCols }};gap:clamp(18px,4vw,64px);align-items:end;margin-bottom:clamp(36px,5vw,64px)">
+          <div>
+            <span style="font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#D1A859">Two Properties</span>
+            <h2 style="margin:16px 0 0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1.14;color:#F5EFE5;max-width:16ch">One address, two scales of celebration</h2>
+          </div>
+          <p style="margin:0;font-size:17px;line-height:1.85;color:rgba(245,239,229,.78);max-width:46ch">Choose the property that fits your guest list. Both sit on the same premises and share the garden, the pool and our in-house event team.</p>
         </div>
-        <div style="position:absolute;inset:0;clip-path:polygon(58.4% 0,100% 0,100% 100%,42.4% 100%);background-image:linear-gradient(260deg,rgba(63,36,35,.82) 0%,rgba(63,36,35,.42) 100%),url(https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=70);background-size:cover;background-position:center;background-color:#5D2B2A;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;text-align:right;gap:18px;padding:0 clamp(28px,8vw,120px) 0 13%;transition:filter .4s ease" style-hover="filter:brightness(1.1)">
-          <span style="font-size:12.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Property Two</span>
-          <h3 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3.2vw,42px);line-height:1.2;color:#F5EFE5;max-width:14ch">Resort for 500 members</h3>
-          <p style="margin:0;font-size:16px;line-height:1.8;color:rgba(245,239,229,.86);max-width:24ch">Large scale events and celebrations with room to move.</p>
-          <a href="Properties.dc.html" style="border:1px solid rgba(209,168,89,.7);color:#D1A859;font-size:13px;font-weight:600;letter-spacing:.1em;padding:16px 26px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:#D1A859;color:#3F2423;border-color:#D1A859">See the property</a>
-        </div>
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none" aria-hidden="true"><line x1="58" y1="0" x2="42" y2="100" stroke="#D1A859" stroke-width="1" vector-effect="non-scaling-stroke"/></svg>
-      </div>
-      <div style="display:{{ stackedDisplay }};flex-direction:column;margin-top:26px">
-        <div style="padding:46px 20px;background:repeating-linear-gradient(135deg,#4A2827 0 11px,#3F2423 11px 22px);display:flex;flex-direction:column;gap:14px;border-top:1px solid rgba(209,168,89,.28)">
-          <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Property One</span>
-          <h3 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:28px;line-height:1.2;color:#F5EFE5">Resort for 150 members</h3>
-          <p style="margin:0;font-size:16px;line-height:1.8;color:rgba(245,239,229,.82)">Private celebrations, intimate gatherings and comfortable stays.</p>
-          <a href="Properties.dc.html" style="align-self:flex-start;border:1px solid rgba(209,168,89,.7);color:#D1A859;font-size:13px;font-weight:600;padding:14px 22px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:#D1A859;color:#3F2423;border-color:#D1A859">See the property</a>
-        </div>
-        <div style="padding:46px 20px;background:repeating-linear-gradient(135deg,#5D2B2A 0 11px,#522726 11px 22px);display:flex;flex-direction:column;gap:14px;border-top:1px solid rgba(209,168,89,.28)">
-          <span style="font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#D1A859">Property Two</span>
-          <h3 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:28px;line-height:1.2;color:#F5EFE5">Resort for 500 members</h3>
-          <p style="margin:0;font-size:16px;line-height:1.8;color:rgba(245,239,229,.82)">Large scale events and celebrations with room to move.</p>
-          <a href="Properties.dc.html" style="align-self:flex-start;border:1px solid rgba(209,168,89,.7);color:#D1A859;font-size:13px;font-weight:600;padding:14px 22px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:#D1A859;color:#3F2423;border-color:#D1A859">See the property</a>
+
+        <div style="display:grid;grid-template-columns:{{ halfCols }};gap:clamp(20px,3vw,36px)">
+          <sc-for list="{{ homeProperties }}" as="p" hint-placeholder-count="2">
+            <a href="Properties.dc.html" style="display:flex;flex-direction:column;background:#4A2827;border:1px solid rgba(209,168,89,.32);overflow:hidden;transition:border-color .3s ease,transform .3s ease,box-shadow .3s ease" style-hover="border-color:#D1A859;transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.32)">
+              <div style="position:relative;height:clamp(240px,26vw,340px);overflow:hidden;background-color:#3F2423">
+                <div style="position:absolute;inset:0;background-image:url({{ p.url }});background-size:cover;background-position:{{ p.pos }};transition:transform .7s ease" style-hover="transform:scale(1.05)"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(63,36,35,0) 45%,rgba(63,36,35,.88) 100%);pointer-events:none"></div>
+                <span style="position:absolute;top:18px;left:18px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#3F2423;background:#D1A859;padding:7px 12px">{{ p.tag }}</span>
+                <div style="position:absolute;left:22px;bottom:16px;display:flex;align-items:baseline;gap:10px;pointer-events:none">
+                  <span style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(46px,5.4vw,68px);line-height:1;color:#F5EFE5">{{ p.count }}</span>
+                  <span style="font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#D1A859">Guests</span>
+                </div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:16px;padding:clamp(24px,3vw,34px)">
+                <h3 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.2;color:#F5EFE5">{{ p.title }}</h3>
+                <p style="margin:0;font-size:16px;line-height:1.8;color:rgba(245,239,229,.8)">{{ p.body }}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:8px">
+                  <sc-for list="{{ p.points }}" as="pt" hint-placeholder-count="3">
+                    <span style="font-size:13px;color:#F5EFE5;border:1px solid rgba(209,168,89,.4);padding:7px 12px">{{ pt }}</span>
+                  </sc-for>
+                </div>
+                <span style="margin-top:auto;padding-top:8px;align-self:flex-start;font-size:13px;font-weight:600;letter-spacing:.1em;color:#D1A859;border-bottom:1px solid #D1A859;padding-bottom:4px">See the property →</span>
+              </div>
+            </a>
+          </sc-for>
         </div>
       </div>
     </section>
 
-    <section data-screen-label="Events" style="padding:clamp(64px,9vw,130px) 0;background:#F5EFE5">
-      <div style="max-width:1240px;margin:0 auto clamp(32px,4vw,52px);padding:0 clamp(20px,5vw,72px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px">
-        <div>
-          <span style="font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#786B61">Celebrations</span>
-          <h2 style="margin:16px 0 0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1.14;color:#5D2B2A">Your occasion, our canvas</h2>
-        </div>
-        <div style="display:flex;gap:10px">
-          <button onClick="{{ scrollLeft }}" aria-label="Previous" style="width:48px;height:48px;border:1px solid rgba(209,168,89,.7);background:transparent;color:#5D2B2A;font-size:16px;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:#5D2B2A;color:#F5EFE5">←</button>
-          <button onClick="{{ scrollRight }}" aria-label="Next" style="width:48px;height:48px;border:1px solid rgba(209,168,89,.7);background:transparent;color:#5D2B2A;font-size:16px;cursor:pointer;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="background:#5D2B2A;color:#F5EFE5">→</button>
-        </div>
-      </div>
-      <div ref="{{ evRef }}" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" onTouchStart="{{ pause }}" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 clamp(20px,5vw,72px) 16px">
-        <sc-for list="{{ events }}" as="e" hint-placeholder-count="6">
-          <div style="flex:0 0 auto;width:clamp(250px,28vw,360px);scroll-snap-align:start">
-            <div style="position:relative;height:clamp(300px,32vw,420px);border:1px solid rgba(209,168,89,.5);overflow:hidden">
-              <div style="position:absolute;inset:0;background-image:url({{ e.url }});background-size:cover;background-position:center;background-color:#EDE3D2;display:flex;align-items:center;justify-content:center">
-              </div>
-            </div>
-            <h4 style="margin:18px 0 8px;font-family:'Playfair Display',serif;font-weight:500;font-size:24px;color:#5D2B2A">{{ e.title }}</h4>
-            <p style="margin:0;max-width:30ch;font-size:15px;line-height:1.75;color:#786B61">{{ e.note }}</p>
+    <section data-screen-label="Events" style="padding:clamp(64px,9vw,130px) clamp(20px,5vw,72px);background:#F5EFE5">
+      <div style="max-width:1240px;margin:0 auto">
+        <div style="display:grid;grid-template-columns:{{ halfCols }};gap:clamp(18px,4vw,64px);align-items:end;margin-bottom:clamp(32px,4.5vw,60px)">
+          <div>
+            <span style="font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#786B61">Celebrations</span>
+            <h2 style="margin:16px 0 0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,52px);line-height:1.14;color:#5D2B2A">Your occasion, our canvas</h2>
           </div>
-        </sc-for>
-      </div>
-      <div style="max-width:1240px;margin:clamp(28px,3vw,40px) auto 0;padding:0 clamp(20px,5vw,72px)">
-        <a href="Events.dc.html" style="font-size:14px;font-weight:600;letter-spacing:.06em;color:#5D2B2A;border-bottom:1px solid #D1A859;padding-bottom:5px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="color:#D1A859">All occasions we host →</a>
+          <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+            <p style="margin:0;font-size:17px;line-height:1.85;color:#2D2523;max-width:46ch">From a morning haldi to a whole property held for one night, each occasion is set up around how you want it to feel.</p>
+            <a href="Events.dc.html" style="font-size:14px;font-weight:600;letter-spacing:.06em;color:#5D2B2A;border-bottom:1px solid #D1A859;padding-bottom:5px;transition:background-color .25s ease,color .25s ease,border-color .25s ease" style-hover="color:#D1A859">All occasions we host →</a>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ eventCols }};gap:clamp(12px,1.6vw,20px)">
+          <sc-for list="{{ events }}" as="e" hint-placeholder-count="6">
+            <a href="Events.dc.html" style="position:relative;display:block;height:{{ eventH }};overflow:hidden;border:1px solid rgba(209,168,89,.45);background-color:#3F2423;transition:border-color .3s ease,box-shadow .3s ease" style-hover="border-color:#D1A859;box-shadow:0 16px 36px rgba(63,36,35,.22)">
+              <div style="position:absolute;inset:0;background-image:url({{ e.url }});background-size:cover;background-position:center;transition:transform .7s ease" style-hover="transform:scale(1.06)"></div>
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(63,36,35,.1) 30%,rgba(63,36,35,.9) 100%);pointer-events:none"></div>
+              <span style="position:absolute;top:clamp(12px,1.6vw,20px);left:clamp(12px,1.6vw,20px);font-family:'Playfair Display',serif;font-size:clamp(15px,1.4vw,18px);color:#D1A859;pointer-events:none">{{ e.num }}</span>
+              <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(14px,2vw,26px);display:flex;flex-direction:column;gap:8px;pointer-events:none">
+                <span style="width:32px;height:1px;background:#D1A859"></span>
+                <h4 style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(19px,2vw,26px);line-height:1.2;color:#F5EFE5">{{ e.title }}</h4>
+                <p style="margin:0;max-width:30ch;font-size:clamp(13px,1.1vw,15px);line-height:1.6;color:rgba(245,239,229,.82);display:{{ noteDisplay }}">{{ e.note }}</p>
+              </div>
+            </a>
+          </sc-for>
+        </div>
       </div>
     </section>
 
     <section data-screen-label="Rooms teaser" style="background:#F5EFE5;border-top:1px solid rgba(209,168,89,.4)">
       <div style="display:grid;grid-template-columns:{{ halfCols }}">
-        <div style="position:relative;min-height:clamp(300px,36vw,480px);background-image:url(https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=70);background-size:cover;background-position:center;background-color:#3F2423;display:flex;align-items:flex-end;padding:26px">
+        <div style="position:relative;min-height:clamp(300px,36vw,480px);background-image:url(assets/WhatsApp%20Image%202026-10-17%20at%2013.15.04.jpeg);background-size:cover;background-position:center;background-color:#3F2423;display:flex;align-items:flex-end;padding:26px">
         </div>
         <div style="padding:clamp(44px,6vw,96px) clamp(20px,5vw,72px);display:flex;flex-direction:column;justify-content:center;gap:20px">
           <span style="font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#786B61">The Rooms</span>
@@ -142,18 +147,18 @@
 
     <section data-screen-label="Garden and pool" style="background:#3F2423">
       <div style="position:relative;height:clamp(380px,56vh,600px);overflow:hidden;display:flex;align-items:center;justify-content:center">
-        <div style="position:absolute;left:0;right:0;top:-14%;bottom:-14%;transform:translateY({{ parY }});background-image:url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=70);background-size:cover;background-position:center;background-color:#3F2423"></div>
+        <div style="position:absolute;left:0;right:0;top:-14%;bottom:-14%;transform:translateY({{ parY }});background-image:url(assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg);background-size:cover;background-position:center;background-color:#3F2423"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(rgba(63,36,35,.5),rgba(63,36,35,.72))"></div>
         <div style="position:relative;text-align:center;padding:0 24px;display:flex;flex-direction:column;align-items:center;gap:20px">
           <p style="margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3.6vw,48px);line-height:1.28;color:#F5EFE5;max-width:26ch">A garden, a pool, and the quiet of the canal beyond</p>
         </div>
       </div>
       <div style="display:grid;grid-template-columns:{{ halfCols }};gap:1px;background:rgba(209,168,89,.32)">
-        <div style="position:relative;height:clamp(260px,30vw,400px);background-image:url(https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=70);background-size:cover;background-position:center;background-color:#EDE3D2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:30px">
-          <span style="font-family:'Playfair Display',serif;font-weight:500;font-size:28px;color:#5D2B2A">The Garden</span>
+        <div style="position:relative;height:clamp(260px,30vw,400px);background-image:url(assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg);background-size:cover;background-position:center;background-color:#EDE3D2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:30px">
+          <span style="font-family:'Playfair Display',serif;font-weight:500;font-size:28px;color:#FFFFFF;text-shadow:0 2px 12px rgba(0,0,0,.55)">The Garden</span>
         </div>
-        <div style="position:relative;height:clamp(260px,30vw,400px);background-image:url(https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=70);background-size:cover;background-position:center;background-color:#EDE3D2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:30px">
-          <span style="font-family:'Playfair Display',serif;font-weight:500;font-size:28px;color:#5D2B2A">The Pool</span>
+        <div style="position:relative;height:clamp(260px,30vw,400px);background-image:url(assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg);background-size:cover;background-position:center;background-color:#EDE3D2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:30px">
+          <span style="font-family:'Playfair Display',serif;font-weight:500;font-size:28px;color:#FFFFFF;text-shadow:0 2px 12px rgba(0,0,0,.55)">The Pool</span>
         </div>
       </div>
     </section>
@@ -210,15 +215,15 @@ class Component extends DCLogic {
   };
 
   heroLabels = ['Heritage facade, dusk', 'Mandap in the garden', 'Poolside, evening lights'];
-  heroUrls = ['https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1600&q=70', 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=70', 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1600&q=70'];
+  heroUrls = ['assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', 'assets/WhatsApp%20Image%202026-10-17%20at%2013.15.04.jpeg'];
 
   eventsList = [
-    { title: 'Haldi', note: 'Morning light, marigold, open lawn.', slot: 'Haldi ceremony', url: 'https://images.unsplash.com/photo-1509610973147-232dfea52a97?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Mehndi', note: 'Shaded seating and low canopy décor.', slot: 'Mehndi setup', url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Get Together', note: 'Small gatherings for family and friends.', slot: 'Family gathering', url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Poolside Party', note: 'Pool deck laid out for evening service.', slot: 'Pool party', url: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Spiritual Events', note: 'Quiet, screened space for satsang and puja.', slot: 'Spiritual event', url: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Private Events', note: 'Whole property held for one occasion.', slot: 'Private event', url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=70' },
+    { title: 'Haldi', note: 'Morning light, marigold, open lawn.', slot: 'Haldi ceremony', url: 'assets/occasions/haldi.jpg' },
+    { title: 'Mehndi', note: 'Shaded seating and low canopy décor.', slot: 'Mehndi setup', url: 'assets/occasions/mehndi.jpg' },
+    { title: 'Get Together', note: 'Small gatherings for family and friends.', slot: 'Family gathering', url: 'assets/occasions/get-together.jpg' },
+    { title: 'Poolside Party', note: 'Pool deck laid out for evening service.', slot: 'Pool party', url: 'assets/occasions/pool-party.jpg' },
+    { title: 'Spiritual Events', note: 'Quiet, screened space for satsang and puja.', slot: 'Spiritual event', url: 'assets/occasions/spiritual.jpg' },
+    { title: 'Private Events', note: 'Whole property held for one occasion.', slot: 'Private event', url: 'assets/occasions/private-event.jpg' },
   ];
 
   componentDidMount() {
@@ -230,19 +235,10 @@ class Component extends DCLogic {
     };
     window.addEventListener('resize', this.onResize);
     window.addEventListener('scroll', this.onScroll, { passive: true });
-    this.evTimer = setInterval(() => {
-      const el = this.evEl;
-      if (!el || this.evPaused) return;
-      const card = el.firstElementChild;
-      const step = card ? card.getBoundingClientRect().width + 20 : el.clientWidth * 0.7;
-      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 8;
-      el.scrollTo({ left: atEnd ? 0 : el.scrollLeft + step, behavior: 'smooth' });
-    }, 2000);
   }
 
   componentWillUnmount() {
     clearInterval(this.timer);
-    clearInterval(this.evTimer);
     window.removeEventListener('resize', this.onResize);
     window.removeEventListener('scroll', this.onScroll);
   }
@@ -263,8 +259,26 @@ class Component extends DCLogic {
       })),
       introCols: m ? '1fr' : '0.85fr 1.15fr',
       halfCols: m ? '1fr' : '1fr 1fr',
-      diagonalDisplay: m ? 'none' : 'block',
-      stackedDisplay: m ? 'flex' : 'none',
+      homeProperties: [
+        {
+          tag: 'Property One',
+          count: '150',
+          title: 'Intimate celebrations',
+          body: 'Held for one family at a time. Suited to private functions, close gatherings and comfortable stays around an event.',
+          points: ['Private events', 'Guest rooms on site', 'Pool access'],
+          url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg',
+          pos: 'center 55%',
+        },
+        {
+          tag: 'Property Two',
+          count: '500',
+          title: 'Grand celebrations',
+          body: 'For weddings and large scale events that need open space, staging and room for guests to move freely.',
+          points: ['Weddings', 'Open lawn staging', 'Large dining setups'],
+          url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg',
+          pos: 'center 60%',
+        },
+      ],
       teaserCols: m ? '1fr 1fr' : 'repeat(4,1fr)',
       facts: [
         { n: '6+', label: 'Years in events' },
@@ -272,17 +286,15 @@ class Component extends DCLogic {
         { n: '262', label: 'Sq ft rooms' },
       ],
       teaser: [
-        { label: 'Exterior, day', url: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1600&q=70', h: m ? '180px' : '300px' },
-        { label: 'Garden lawn', url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=70', h: m ? '180px' : '300px' },
-        { label: 'Swimming pool', url: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=70', h: m ? '180px' : '300px' },
-        { label: 'Event décor', url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=70', h: m ? '180px' : '300px' },
+        { label: 'Exterior, day', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', h: m ? '180px' : '300px' },
+        { label: 'Garden lawn', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', h: m ? '180px' : '300px' },
+        { label: 'Swimming pool', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.08.02.jpeg', h: m ? '180px' : '300px' },
+        { label: 'Event décor', url: 'assets/WhatsApp%20Image%202026-10-17%20at%2013.04.09.jpeg', h: m ? '180px' : '300px' },
       ],
-      events: this.eventsList,
-      evRef: (el) => { this.evEl = el; },
-      pause: () => { this.evPaused = true; },
-      resume: () => { this.evPaused = false; },
-      scrollLeft: () => this.evEl && this.evEl.scrollBy({ left: -this.evEl.clientWidth * 0.7, behavior: 'smooth' }),
-      scrollRight: () => this.evEl && this.evEl.scrollBy({ left: this.evEl.clientWidth * 0.7, behavior: 'smooth' }),
+      events: this.eventsList.map((e, i) => ({ ...e, num: String(i + 1).padStart(2, '0') })),
+      eventCols: m ? '1fr 1fr' : 'repeat(3,1fr)',
+      eventH: m ? '230px' : 'clamp(300px,30vw,400px)',
+      noteDisplay: m ? 'none' : 'block',
       parY: this.state.parY + 'px',
     };
   }

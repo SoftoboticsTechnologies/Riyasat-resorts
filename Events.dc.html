@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/circular%20logo.png">
+<link rel="apple-touch-icon" href="assets/circular%20logo.png">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -96,12 +98,12 @@ class Component extends DCLogic {
   state = { isMobile: typeof window !== 'undefined' && window.innerWidth < 980 };
 
   eventsList = [
-    { title: 'Haldi', note: 'Morning light, marigold, open lawn.', slot: 'Haldi ceremony', url: 'https://images.unsplash.com/photo-1509610973147-232dfea52a97?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Mehndi', note: 'Shaded seating and low canopy décor.', slot: 'Mehndi setup', url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Get Together', note: 'Small gatherings for family and friends.', slot: 'Family gathering', url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Swimming Pool Party', note: 'Pool deck laid out for evening service.', slot: 'Pool party', url: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Spiritual Events', note: 'Quiet, screened space for satsang and puja.', slot: 'Spiritual event', url: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1600&q=70' },
-    { title: 'Private Events', note: 'Whole property held for one occasion.', slot: 'Private event', url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=70' },
+    { title: 'Haldi', note: 'Morning light, marigold, open lawn.', slot: 'Haldi ceremony', url: 'assets/occasions/haldi.jpg' },
+    { title: 'Mehndi', note: 'Shaded seating and low canopy décor.', slot: 'Mehndi setup', url: 'assets/occasions/mehndi.jpg' },
+    { title: 'Get Together', note: 'Small gatherings for family and friends.', slot: 'Family gathering', url: 'assets/occasions/get-together.jpg' },
+    { title: 'Swimming Pool Party', note: 'Pool deck laid out for evening service.', slot: 'Pool party', url: 'assets/occasions/pool-party.jpg' },
+    { title: 'Spiritual Events', note: 'Quiet, screened space for satsang and puja.', slot: 'Spiritual event', url: 'assets/occasions/spiritual.jpg' },
+    { title: 'Private Events', note: 'Whole property held for one occasion.', slot: 'Private event', url: 'assets/occasions/private-event.jpg' },
   ];
 
   componentDidMount() {
